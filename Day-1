@@ -1,0 +1,8 @@
+1. Write a Python program to detect missing numbers in a sequence optimize a loop-based solution using list comprehension.?
+
+def find_missing_numbers(nums):
+    missing = []
+    for i in range(min(nums), max(nums) + 1):
+        if i not in nums:
+            missing.append(i)
+    return missing
