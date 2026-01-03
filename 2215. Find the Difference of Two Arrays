@@ -1,0 +1,18 @@
+Q: Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where:
+
+a. answer[0] is a list of all distinct integers in nums1 which are not present in nums2.
+b. answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
+Note: Integers in the lists may be returned in any order.
+
+
+sol:
+
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        set1 = set(nums1)
+        set2 = set(nums2)
+
+        only_in_nums1 = list(set1 - set2)
+        only_in_nums2 = list(set2 - set1)
+
+        return [only_in_nums1, only_in_nums2]
